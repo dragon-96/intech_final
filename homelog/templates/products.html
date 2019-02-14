@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+{% load static %}
+<link rel="stylesheet" href="{% static 'homelog/products.css' %}"  type="text/css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <form class="navbar-form navbar-left " role="filter">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-warning">Submit</button>
+  </form>
+
+  <nav class="navbar fixed-top navbar-dark bg-primary sticky-top">
+    <form class="form-inline " action="" method="get">
+      BRAND:
+      {{ filter.form.brand }}
+      PRICE BETWEEN:
+      {{ filter.form.price__gt }}
+      AND
+      {{ filter.form.price__lt }}
+      <button class="btn btn-warning " type="submit">Search</button>
+      <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+      </a>
+    </form>
+
+
+  </nav>
+
+
+<div class="container">
+    <div class="row">
+{%  for obj in filter.qs %}
+        <div class="col-md-4">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <img src="{{obj.image.url}}" class="img-responsive" alt="{{obj.brand}}">
+                <div>
+                  <a href="#" class="btn">Zoom</a>
+                  <a href="#" class="btn">View</a>
+                </div>
+              </div>
+              <h3><a href="productdetails">{{obj.summary}}</a></h3>
+              <div class="pi-price">Rs {{obj.price}}</div>
+              <a href="javascript:;" class="btn add2cart">Add to cart</a>
+              <div class="sticker sticker-new"></div>
+            </div>
+        </div>
+{% endfor %}
+
+    </div>
+</div>
+
+</body>
+</html>

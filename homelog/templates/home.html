@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+ <title>Ecommerce Homepage</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+{% load static %}
+<link rel="stylesheet" href="{% static 'homelog/chatbox.css' %}">
+
+<link rel="stylesheet" href="{% static 'homelog/products.css' %}"  type="text/css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+  .z{
+height: 35px;
+width: 255px;
+border-radius:20px;
+border-left-style: solid;
+border-left-color: #ffffff;
+ border-bottom-color: #ffffff;
+}
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+   .shiftt{margin-left:45px}
+	.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+button {
+  border-radius:20px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+button:hover {
+  opacity: 0.7;
+}
+	.buttons {
+	border-radius:2px;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  width: 35%;
+  font-size: 18px;
+  margin-left:32%;
+}
+.buttons:hover {
+  opacity: 0.7;
+}
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+.but {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.more-products {
+    padding-top: 40px;
+    text-align: center
+}
+.more-products span {
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    font-size: 107.69231%;
+    line-height: 121.42857%;
+    font-family: "montserratbold", sans-serif;
+    -moz-border-radius: 26px;
+    -webkit-border-radius: 26px;
+    border-radius: 26px;
+    -moz-box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    -webkit-box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    box-shadow: rgba(17, 17, 18, 0.1) 0 2px 4px, rgba(19, 20, 20, 0.07) 0 1px 1px;
+    background-color: #086fcf;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 16px 26px
+}
+.more-products span:hover {
+    background-color: #0084ff
+}
+.more-products.hidden {
+    display: none
+}
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+.footer #button{
+	width:35px;
+	height:35px;
+	border: #727172 12px solid;
+	border-radius:35px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer #button:hover{
+	width:35px;
+	height:35px;
+	border: #3A3A3A 12px solid;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	position:relative;
+}
+.footer {
+	bottom:0;
+	left:0;
+	position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	z-index:999;
+}
+.footer:hover {
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	height: 10em;
+}
+.footer #container{
+	margin-top:5px;
+	width:100%;
+height:100%;
+  position:relative;
+  top:0;
+  left:0;
+	background: #3A3A3A;
+}
+.footer #cont{
+  position:relative;
+  top:-45px;
+  right:190px;
+	width:150px;
+	height:auto;
+	margin:0 auto;
+}
+.footer_center{
+	width:500px;
+	float:left;
+  text-align:center;
+}
+.footer h5{
+	font-family: 'Helvetica';
+	font-size: 16px;
+	font-weight: 100;
+	margin-top:70px;
+	margin-left:40px;
+}
+  /* Active/current link */
+.active {
+  background-color: #000;
+  color: white;
+}
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+  }
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>LOGO</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Mobile Phones</a>
+    <a href="#" class="w3-bar-item w3-button">Computer Accessories</a>
+    <a onclick="myAccFuncP()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Price <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccP" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Rs.1000-5000</a>
+      <a href="products" class="w3-bar-item w3-button">Rs.5000-Rs.10000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.10000-Rs.20000</a>
+      <a href="#" class="w3-bar-item w3-button">Rs.20000-Rs.30000</a>
+	        <a href="#" class="w3-bar-item w3-button">Rs.30000-Rs.50000</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+
+
+	 <a onclick="myAccFuncB()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Brand <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccB" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>SAMSUNG</a>
+      <a href="#" class="w3-bar-item w3-button">SONY</a>
+      <a href="#" class="w3-bar-item w3-button">APPLE</a>
+      <a href="#" class="w3-bar-item w3-button">MICROMAX</a>
+	        <a href="#" class="w3-bar-item w3-button">PANASONIC</a>
+			 <a href="#" class="w3-bar-item w3-button">LG</a>
+			  <a href="#" class="w3-bar-item w3-button">BPL</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+	 <a onclick="myAccFuncO()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Other Devices <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAccO" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Digital Cameras</a>
+      <a href="#" class="w3-bar-item w3-button">Smart Watches</a>
+      <a href="#" class="w3-bar-item w3-button">Printer</a>
+      <a href="#" class="w3-bar-item w3-button">HeadSets</a>
+	        <a href="#" class="w3-bar-item w3-button">Echo</a>
+			 <a href="#" class="w3-bar-item w3-button">Fire TV</a>
+			  <a href="#" class="w3-bar-item w3-button">Kindle</a>
+			  <a href="#" class="w3-bar-item w3-button">Mobile Accessories</a>
+			  <a href="#" class="w3-bar-item w3-button">Laptop Accessories</a>
+			      <a href="#" class="w3-bar-item w3-button">more +</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">Location</a>
+
+  </div>
+  <a href="#"><span class="glyphicon glyphicon-user" style="color:#0b7dda;font-size:20px"></span><span><b> MY ACCOUNT</b></span></a>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Privacy Policy</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge" style="color:#000">
+  <ul class="nav nav-tabs">
+  <li><input type="text" class="glyphicon glyphicon-search" style="font-size:20px;width:450px;height:47px;border-width:5px" placeholder=" Search..."></li>
+  <li class="active" style="font-size:20px"><a href="#"><b>Home</b></a></li>
+  <li><a href="mycart2.html" style="font-size:20px"><b>About</b></a></li>
+  <li><a href="#"> <i class="fa fa-shopping-cart w3-margin-right"style="font-size:25px"><span class="badge badge-pill badge-info" style="color:#fff">0</span></i></a></li>
+  {% if user.is_authenticated %}
+  <li><a href="javascript:{document.getElementById('logout').submit()}"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+  <form id="logout" method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <input type="hidden" />
+  </form>
+  {% else %}
+  <li><a href="login"><span class="glyphicon glyphicon-log-in" style="font-size:20px"></span> <b style="font-size:18px">Login</b></a></li>
+  {% endif %}
+</ul>
+</header>
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+	  <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+	  <a href="#">
+        {% load static %}
+        <img src="{% static "homelog/imgs/9.jpg" %}" class="img-responsive" style="width:100%; height:386px" alt="Image"></a>
+        <div class="carousel-caption">
+
+          <h3>Offers of the Week</h3>
+          <p>Money Money..</p>
+        </div>
+      </div>
+
+      <div class="item">
+         <a href="#"><img src="{% static "homelog/imgs/10.jpg" %}" class="img-responsive" style="width:100%; height:386px" alt="Image"></a>
+        <div class="carousel-caption">
+          <h3>Trending Offers</h3>
+          <p>By Intech...</p>
+        </div>
+      </div>
+
+
+	 <div class="item">
+         <a href="#"><img src="{% static "homelog/imgs/11.jpg" %}" class="img-responsive" style="width:100%; height:386px" alt="Image"></a>
+        <div class="carousel-caption">
+          <h3>Diwali Dhamaka</h3>
+          <p>more to go..</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New Products</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New Products</h1>
+      <h1 class="w3-hide-small">OFFERS 2018</h1>
+      <p><a href="#" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>Shop By Trend</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="{% static "homelog/imgs/oppo.jpg" %}" style="width:100%;height:180px">
+        <p class="price">Product 1<br><b>Rs.25000</b></p>
+      </div>
+	  <br><br><br>
+      <div class="w3-container">
+        <img src="{% static "homelog/imgs/14.jpg" %}" style="width:100%;height:180px">
+        <p class="price">Product 2<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static "homelog/imgs/12.jpg" %}" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 3<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="{% static "homelog/imgs/oppo1.jpg" %}" style="width:100%;height:180px">
+        <p class="price">Product 4<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="{% static "homelog/imgs/oppo1.jpg" %}" style="width:100%;height:180px">
+        <p class="price">Product 5<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="{% static "homelog/imgs/13.jpg" %}" style="width:100%;height:180px">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p class="price">Product 6<br><b class="w3-text-red">Rs.40000</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="{% static "homelog/imgs/12.jpg" %}" style="width:100%;height:180px">
+        <p class="price">Product 7<br><b>Rs.25000</b></p>
+      </div>
+	   <br><br><br>
+      <div class="w3-container">
+        <img src="{% static "homelog/imgs/oppo1.jpg" %}" style="width:100%;height:180px">
+        <p class="price">Product 8<br><b>Rs.25000</b></p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <a href="shop">
+  <button class="buttons"> More Products >> </button>
+</a>
+ <br><br><br>
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Subscribe</h1>
+    <p>To get special offers provide E-Mail Address</p>
+    <p><input type="text" class="w3-input w3-border" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Contact</h4>
+        <p>Questions? Go ahead.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>
+
+      <div class="w3-col s4">
+        <h4><b>About</b></h4>
+        <p><a href="#">About us</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Return</a></p>
+        <p><a href="#">Help</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4><b>Contact</b></h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0001112222</p>
+        <p><i class="fa fa-fw fa-envelope"></i> intech@gmail.com</p>
+        <h4><b>We accept</b></h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Cash on delivery</p>
+		<p><i class="fa fa-fw fa-credit-card"></i> Debit Card</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="#" title="Intech" target="_blank" class="w3-hover-opacity">Intech | copyright &copy; {% now "Y" %}, Intech Olympiad</a></div>
+
+  <!-- End page content -->
+</div>
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new products and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion
+function myAccFuncP() {
+    var x = document.getElementById("demoAccP");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+function myAccFuncB() {
+    var y = document.getElementById("demoAccB");
+    if (y.className.indexOf("w3-show") == -1) {
+        y.className += " w3-show";
+    } else {
+        y.className = y.className.replace(" w3-show", "");
+    }
+}
+function myAccFuncO() {
+    var x = document.getElementById("demoAccO");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+document.getElementById("myBtn").click();
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "5c624faa55f34decaffd2bd9";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<!-- End of ChatBot code -->
+        
+
+
+</body>
+</html>
